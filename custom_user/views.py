@@ -60,3 +60,4 @@ def user_login(request):
         'user': CustomUserSerializer(user).data,
     }
     return Response(data, status=status.HTTP_200_OK)
+

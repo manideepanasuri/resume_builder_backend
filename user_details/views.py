@@ -553,7 +553,7 @@ class SkillView(APIView):
             developer_tools=request.data.get('developer_tools')
             framework=request.data.get('framework')
             cloud_database=request.data.get('cloud_database')
-            soft_skills=request.data.get('softSkills')
+            soft_skills=request.data.get('soft_skills')
             coursework=request.data.get('coursework')
             area_of_interest=request.data.get('area_of_interest')
 

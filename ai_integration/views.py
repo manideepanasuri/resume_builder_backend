@@ -35,7 +35,7 @@ class AiLatexGeneration(APIView):
         except Exception as e:
             data={
                 "success":"false",
-                "message":"Failed to Generate",
+                "message":e,
             }
             print(e)
             return Response(data, status=status.HTTP_400_BAD_REQUEST)

@@ -339,7 +339,7 @@ class ExperienceView(APIView):
         city=request.data.get('city')
         role=request.data.get('role')
         dates=request.data.get('dates')
-        description=request.data.get('description',[])
+        description=request.data.get('descriptions',[])
         try:
             experience=Experience.objects.create(user=user,company=company,city=city,role=role,dates=dates)
             for des in description:
@@ -390,7 +390,7 @@ class ExperienceView(APIView):
             dates=request.data.get('dates',experience.dates)
             dess=ExperienceDescription.objects.all().filter(experience=experience)
             dess.all().delete()
-            description=request.data.get('description',ExperienceDescriptionSerializer(dess,many=True).data)
+            description=request.data.get('descriptions',ExperienceDescriptionSerializer(dess,many=True).data)
             experience.company=company
             experience.city=city
             experience.role=role
